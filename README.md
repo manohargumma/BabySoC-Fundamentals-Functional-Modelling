@@ -1,151 +1,85 @@
 # ⚡ Week 2 – BabySoC Fundamentals & Functional Modelling  
 
-This document is my detailed write-up for **Week 2** of the BabySoC journey.  
-The focus here is to understand the **core fundamentals of SoC design**,  
-explore why **BabySoC** exists as a simplified model,  
-and appreciate the importance of **functional modelling** before committing to full-blown RTL and physical design.  
+This write-up focuses on four key areas that form the foundation of SoC design and explain how **BabySoC** helps us learn these concepts step by step.  
 
 ---
 
-<details>
-  <summary>📌 1. What Exactly is a System-on-Chip (SoC)?</summary>
+## 📌 1. What is a System-on-Chip (SoC)?  
 
-When you hear the word **SoC**, imagine fitting an entire computer into a *tiny piece of silicon*.  
-Instead of having a **CPU chip, RAM chip, GPU chip, I/O controller chips** scattered across a motherboard,  
-an **SoC** integrates all of this into a **single integrated circuit**.
+A **System-on-Chip (SoC)** is an integrated circuit that consolidates all the essential building blocks of a computing system into a **single piece of silicon**.  
+Unlike traditional designs where CPU, memory, and I/O devices exist on separate chips connected via a motherboard, an SoC brings them together into one unit, reducing power consumption, increasing performance, and shrinking the physical footprint.  
 
-✅ Typical components include:  
-- 🖥️ **Processor (CPU/GPU/AI cores)** – the brain of the system  
-- 💾 **Memory modules** – SRAM, DRAM controllers, caches  
-- 🔌 **Peripherals & interfaces** – USB, UART, SPI, I2C, GPIO  
-- 🔗 **Interconnect fabric** – communication buses, crossbars, NoCs  
-- ⚡ **Specialized hardware** – accelerators, security engines, PLL, DAC, ADC  
+SoCs are everywhere around us:  
+- 📱 Smartphones (Apple A-series, Snapdragon, MediaTek)  
+- ⌚ Smartwatches and wearable devices  
+- 🚗 Automotive electronics (ADAS controllers, infotainment chips)  
+- 🌐 IoT devices (ESP32, Raspberry Pi Pico)  
 
-📱 **Where do we see SoCs?**  
-- Smartphones (Snapdragon, Apple A-series, MediaTek Dimensity)  
-- IoT devices (ESP32, Raspberry Pi RP2040)  
-- Automotive controllers  
-- Embedded medical electronics  
-
-👉 The beauty of an SoC lies in its **compactness, power efficiency, and cost-effectiveness**.  
-It is not just a chip — it is an entire *ecosystem* in a fingernail-sized package.  
-
-</details>
+The essence of an SoC lies in **integration** — a complete digital ecosystem compressed into a single chip.  
 
 ---
 
-<details>
-  <summary>📌 2. Why Do We Use BabySoC Instead of Jumping to Real-World SoCs?</summary>
+## 📌 2. Components of a Typical SoC  
 
-Real-world SoCs like Qualcomm Snapdragon or Apple’s M-series are **incredibly complex**.  
-They involve **billions of transistors**, dozens of IP blocks, and a massive verification effort.  
-Clearly, that’s not a beginner-friendly place to start.  
+At its core, every SoC consists of a few **fundamental building blocks**:  
 
-👉 This is where **BabySoC** comes in.  
+- 🖥️ **Central Processing Unit (CPU):**  
+  The heart of the SoC. Handles instructions, executes operations, and controls data flow. In many modern SoCs, CPUs are based on RISC architectures (like ARM or RISC-V).  
 
-🍼 **BabySoC** is a *scaled-down, open-source, educational SoC*.  
-Its components are simple enough for a learner to understand but realistic enough to demonstrate  
-how different subsystems interact inside a chip.  
+- 💾 **Memory:**  
+  On-chip RAM, ROM, and cache memory for fast access. Some SoCs also include external memory controllers for DRAM or Flash.  
 
-🔑 BabySoC includes:  
-- **RVMYTH** → a compact RISC-V CPU core 🧠  
-- **Phase-Locked Loop (PLL)** → generates stable clocks ⏱️  
-- **10-bit Digital-to-Analog Converter (DAC)** → bridges digital and analog worlds 🎚️  
+- 🔌 **Peripherals:**  
+  Interfaces that allow the SoC to talk to the outside world, such as UART, SPI, I²C, GPIO, timers, and ADC/DAC modules.  
 
-📖 **Why it matters:**  
-- Makes **learning approachable** without overwhelming complexity  
-- Lets students **simulate & test** actual SoC behavior  
-- Provides a foundation to **scale up** towards advanced SoCs  
+- 🔗 **Interconnects:**  
+  The "nervous system" of the SoC. This includes buses, crossbars, or NoCs (Network-on-Chip) that connect CPU, memory, and peripherals together.  
 
-Think of BabySoC as the **training wheels** before riding the high-speed bike of industry-grade chips. 🚲 → 🏍️  
-
-</details>
+Each of these blocks is integrated and optimized to ensure the SoC operates as a **self-sufficient computing platform**.  
 
 ---
 
-<details>
-  <summary>📌 3. Role of Functional Modelling in the SoC Design Flow</summary>
+## 📌 3. Why BabySoC is a Simplified Model for Learning SoC Concepts  
 
-In the chip design world, **design mistakes are expensive**.  
-Once a chip is fabricated, you cannot just “fix” it with a patch.  
-This is why **functional modelling** is a crucial step.  
+Industry-grade SoCs are **incredibly complex** — billions of transistors, multiple cores, GPUs, accelerators, high-speed memory controllers, and advanced security features. Designing and understanding them directly is overwhelming for beginners.  
 
-🔍 **What is Functional Modelling?**  
-It is the process of simulating how the SoC behaves *before* building its RTL or physical layout.  
+🍼 **BabySoC** is an educational SoC designed to simplify this learning curve.  
+It includes only a few carefully chosen blocks:  
 
-🎯 Key goals:  
-- Verify **logical correctness** of system components  
-- Identify mismatches in **timing, communication, or integration**  
-- Explore **different scenarios & corner cases**  
-- Provide an **early visualization of waveforms** (using GTKWave)  
+- **RVMYTH RISC-V core** – a compact open-source CPU core  
+- **PLL (Phase-Locked Loop)** – generates stable and accurate clocks  
+- **10-bit DAC (Digital-to-Analog Converter)** – demonstrates how digital signals can be converted into analog voltages  
 
-🛠️ **Tools Used Here:**  
-- **Icarus Verilog** → for simulation (compiles and runs the design)  
-- **GTKWave** → for viewing waveforms (to see how signals behave over time)  
+By limiting the complexity, BabySoC allows learners to:  
+- Focus on the **core principles** of integration  
+- Understand how different blocks interact inside a chip  
+- Gain confidence before advancing to full-scale RTL or physical design  
 
-👉 Example:  
-Imagine you are designing a PLL-driven DAC system.  
-Functional modelling helps check:  
-- Does the PLL generate a stable clock signal?  
-- Does the DAC output the correct analog voltage when given digital input?  
-- Are reset/enable signals working properly?  
-
-By catching issues here, we **save months of effort and costly fabrication errors**.  
-
-</details>
+In short, BabySoC acts as a **stepping stone** between theoretical SoC concepts and practical chip design.  
 
 ---
 
-<details>
-  <summary>📌 4. BabySoC in the Bigger Picture of SoC Design</summary>
+## 📌 4. Role of Functional Modelling Before RTL and Physical Design  
 
-Let’s place BabySoC in the overall design hierarchy:  
+Chip design follows a structured flow: **Concept → Functional Model → RTL → Synthesis → Physical Design → Fabrication.**  
+Among these steps, **functional modelling** plays a critical role in verifying the system’s behavior *before* time and resources are spent on RTL or silicon fabrication.  
 
-1. **Conceptual Understanding** → Learning SoC blocks (CPU, memory, I/O)  
-2. **Functional Modelling** → Using Icarus Verilog + GTKWave for simulation  
-3. **RTL Design** → Writing actual Verilog for CPU, interconnects, peripherals  
-4. **Synthesis** → Converting RTL into gate-level netlist  
-5. **Physical Design** → Floorplanning, placement, routing, timing closure  
-6. **Fabrication** → The final silicon chip  
+Functional modelling allows us to:  
+- 🧪 **Simulate behavior** of the SoC blocks  
+- 🔍 Detect errors in design logic at an early stage  
+- 📊 Visualize waveforms (using tools like GTKWave)  
+- 🛠️ Test integration between CPU, memory, and peripherals  
 
-🍼 BabySoC sits right between **conceptual understanding** and **functional modelling**.  
-It acts as a **bridge** between “theory” and “industry-scale implementation.”  
+Tools such as **Icarus Verilog** (for compiling and simulating designs) and **GTKWave** (for analyzing signal activity) are used here.  
 
-</details>
-
----
-
-## 📊 Quick Reference Summary  
-
-| Topic | Explanation |
-|-------|-------------|
-| **SoC** | A single chip that integrates CPU, memory, I/O, and interconnects |
-| **Real-world SoCs** | Snapdragon, Apple M1, ESP32, MediaTek |
-| **BabySoC** | RVMYTH (RISC-V) + PLL + 10-bit DAC |
-| **Purpose of BabySoC** | Educational, simplified SoC for learners |
-| **Functional Modelling** | Simulate behavior before RTL/Physical stages |
-| **Tools** | Icarus Verilog (simulation), GTKWave (waveform analysis) |
-
----
-
-## 📝 Extended Insights  
-
-- SoCs represent the **convergence of digital + analog domains**.  
-- BabySoC demonstrates this through the **DAC**, which turns binary values into measurable voltages.  
-- PLL ensures the **system runs synchronously** without glitches.  
-- BabySoC is not a toy – it embodies the **real challenges of synchronization, integration, and interfacing** that engineers face in billion-transistor SoCs.  
+👉 Without functional modelling, moving directly into RTL or physical design would be risky. Errors caught late in the process can result in costly chip re-spins.  
 
 ---
 
 ## ✅ Conclusion  
 
-The **BabySoC** is more than just a simplified chip – it is a **learning laboratory**.  
-By studying its components and running functional models,  
-we gain practical exposure to **real-world design concepts** that scale into industry-grade SoCs.  
+- An **SoC** integrates CPU, memory, peripherals, and interconnects into one chip.  
+- **BabySoC** provides a **simplified, hands-on platform** to learn these concepts without overwhelming complexity.  
+- **Functional modelling** ensures correctness and reliability before RTL and physical design stages.  
 
-This hands-on journey makes the **abstract world of VLSI tangible**,  
-and ensures learners build **confidence before diving into RTL and physical design**.  
-
----
-
-⭐ *If you found this repository useful, consider giving it a star to support more open-source SoC education.*  
+This journey from **concept to modelling** lays the groundwork for mastering the complete SoC design flow.  
