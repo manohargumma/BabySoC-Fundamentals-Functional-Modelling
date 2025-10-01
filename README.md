@@ -18,7 +18,7 @@ The essence of an SoC lies in **integration** — a complete digital ecosystem c
 
 
 
-## 📌 2. Components of a Typical SoC  
+## 2. Components of a Typical SoC  
 
 At its core, every SoC consists of a few **fundamental building blocks**:  
 
@@ -37,7 +37,7 @@ At its core, every SoC consists of a few **fundamental building blocks**:
 Each of these blocks is integrated and optimized to ensure the SoC operates as a **self-sufficient computing platform**.  
 
 
-## 📌 3. Why BabySoC is a Simplified Model for Learning SoC Concepts  
+## 3. Why BabySoC is a Simplified Model for Learning SoC Concepts  
 
 Industry-grade SoCs are **incredibly complex** — billions of transistors, multiple cores, GPUs, accelerators, high-speed memory controllers, and advanced security features. Designing and understanding them directly is overwhelming for beginners.  
 
@@ -74,8 +74,8 @@ Tools such as **Icarus Verilog** (for compiling and simulating designs) and **GT
 
 ## ✅ Conclusion  
 
-- An **SoC** integrates CPU, memory, peripherals, and interconnects into one chip.  
+- An **SoC** integrates CPU, memory, peripherals, and interconnects into one chip. 
 - **BabySoC** provides a **simplified, hands-on platform** to learn these concepts without overwhelming complexity.  
 - **Functional modelling** ensures correctness and reliability before RTL and physical design stages.  
 
-This journey from **concept to modelling** lays the groundwork for mastering the complete SoC design flow.  
+ 
