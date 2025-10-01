@@ -1,10 +1,9 @@
-# ⚡ Week 2 – BabySoC Fundamentals & Functional Modelling  
+# Week 2 – BabySoC Fundamentals & Functional Modelling  
 
 This write-up focuses on four key areas that form the foundation of SoC design and explain how **BabySoC** helps us learn these concepts step by step.  
 
----
 
-## 📌 1. What is a System-on-Chip (SoC)?  
+##  1. What is a System-on-Chip (SoC)?  
 
 A **System-on-Chip (SoC)** is an integrated circuit that consolidates all the essential building blocks of a computing system into a **single piece of silicon**.  
 Unlike traditional designs where CPU, memory, and I/O devices exist on separate chips connected via a motherboard, an SoC brings them together into one unit, reducing power consumption, increasing performance, and shrinking the physical footprint.  
@@ -17,7 +16,7 @@ SoCs are everywhere around us:
 
 The essence of an SoC lies in **integration** — a complete digital ecosystem compressed into a single chip.  
 
----
+
 
 ## 📌 2. Components of a Typical SoC  
 
@@ -37,7 +36,6 @@ At its core, every SoC consists of a few **fundamental building blocks**:
 
 Each of these blocks is integrated and optimized to ensure the SoC operates as a **self-sufficient computing platform**.  
 
----
 
 ## 📌 3. Why BabySoC is a Simplified Model for Learning SoC Concepts  
 
@@ -57,9 +55,8 @@ By limiting the complexity, BabySoC allows learners to:
 
 In short, BabySoC acts as a **stepping stone** between theoretical SoC concepts and practical chip design.  
 
----
 
-## 📌 4. Role of Functional Modelling Before RTL and Physical Design  
+##  4. Role of Functional Modelling Before RTL and Physical Design  
 
 Chip design follows a structured flow: **Concept → Functional Model → RTL → Synthesis → Physical Design → Fabrication.**  
 Among these steps, **functional modelling** plays a critical role in verifying the system’s behavior *before* time and resources are spent on RTL or silicon fabrication.  
@@ -74,7 +71,6 @@ Tools such as **Icarus Verilog** (for compiling and simulating designs) and **GT
 
 👉 Without functional modelling, moving directly into RTL or physical design would be risky. Errors caught late in the process can result in costly chip re-spins.  
 
----
 
 ## ✅ Conclusion  
 
