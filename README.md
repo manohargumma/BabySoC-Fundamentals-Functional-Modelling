@@ -3,13 +3,27 @@
 This write-up focuses on four key areas that form the foundation of SoC design and explain how **BabySoC** helps us learn these concepts step by step.
 
 ## 📑 Table of Contents
-- [What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)
-- [Components of a Typical SoC](#2-components-of-a-typical-soc)
-- [Why BabySoC is a Simplified Model for Learning SoC Concepts](#3-why-babysoc-is-a-simplified-model-for-learning-soc-concepts)
-- [Role of Functional Modelling Before RTL and Physical Design](#4-role-of-functional-modelling-before-rtl-and-physical-design)
-- [Conclusion](#✅-conclusion)
+# Table of Contents
 
----
+- [Introduction to the VSDBabySoC](#introduction-to-the-vsdbabysoc)
+- [Problem statement](#problem-statement)
+- [What is SoC](#what-is-soc)
+- [What is RVMYTH](#what-is-rvmyth)
+- [What is PLL](#what-is-pll)
+- [What is DAC](#what-is-dac)
+- [VSDBabySoC Modeling](#vsdbabysoc-modeling)
+  - [RVMYTH Modeling](#rvmyth-modeling)
+  - [PLL Modeling](#pll-modeling)
+  - [DAC Modeling](#dac-modeling)
+  - [Step by step modeling walkthrough](#step-by-step-modeling-walkthrough)
+- [OpenLANE installation](#openlane-installation)
+- [Post-synthesis simulation](#post-synthesis-simulation)
+  - [How to synthesize the design](#how-to-synthesize-the-design)
+  - [Synthesis using Yosys](#synthesis-using-yosys)
+  - [Post synthesis simulation (GLS)](#post-synthesis-simulation-gls)
+  - [Yosys final report](#yosys-final-report)
+- [Static timing analysis using OpenSTA](#static-timing-analysis-using-opensta)
+  - [Static timing analysis on the design](#static-timing-analysis-on-the-design)
 
 ## 1. What is a System-on-Chip (SoC)?  
 
