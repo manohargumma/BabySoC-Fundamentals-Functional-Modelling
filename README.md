@@ -9,7 +9,7 @@ This write-up focuses on four key areas that form the foundation of SoC design a
 - [Components of a Typical SoC](#2-components-of-a-typical-soc)
 - [Why BabySoC is a Simplified Model for Learning SoC Concepts](#3-why-babysoc-is-a-simplified-model-for-learning-soc-concepts)
 - [Role of Functional Modelling Before RTL and Physical Design](#4-role-of-functional-modelling-before-rtl-and-physical-design)
-- [Conclusion](#✅-conclusion)
+
 - [VSDBabySoC Modeling](#vsdbabysoc-modeling)
   - [RVMYTH Modeling](#rvmyth-modeling)
   - [PLL Modeling](#pll-modeling)
