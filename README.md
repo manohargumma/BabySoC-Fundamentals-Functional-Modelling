@@ -5,12 +5,11 @@ This write-up focuses on four key areas that form the foundation of SoC design a
 ## 📑 Table of Contents
 # Table of Contents
 
-- [Introduction to the VSDBabySoC](#introduction-to-the-vsdbabysoc)
-- [Problem statement](#problem-statement)
-- [What is SoC](#what-is-soc)
-- [What is RVMYTH](#what-is-rvmyth)
-- [What is PLL](#what-is-pll)
-- [What is DAC](#what-is-dac)
+- [What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)
+- [Components of a Typical SoC](#2-components-of-a-typical-soc)
+- [Why BabySoC is a Simplified Model for Learning SoC Concepts](#3-why-babysoc-is-a-simplified-model-for-learning-soc-concepts)
+- [Role of Functional Modelling Before RTL and Physical Design](#4-role-of-functional-modelling-before-rtl-and-physical-design)
+- [Conclusion](#✅-conclusion)
 - [VSDBabySoC Modeling](#vsdbabysoc-modeling)
   - [RVMYTH Modeling](#rvmyth-modeling)
   - [PLL Modeling](#pll-modeling)
