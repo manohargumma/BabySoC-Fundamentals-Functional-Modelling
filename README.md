@@ -1,7 +1,5 @@
 # Week 2 – BabySoC Fundamentals & Functional Modelling  
 
-This write-up focuses on four key areas that form the foundation of SoC design and explain how **BabySoC** helps us learn these concepts step by step.  
-
 
 ##  1. What is a System-on-Chip (SoC)?  
 
@@ -70,12 +68,3 @@ Functional modelling allows us to:
 Tools such as **Icarus Verilog** (for compiling and simulating designs) and **GTKWave** (for analyzing signal activity) are used here.  
 
 👉 Without functional modelling, moving directly into RTL or physical design would be risky. Errors caught late in the process can result in costly chip re-spins.  
-
-
-## ✅ Conclusion  
-
-- An **SoC** integrates CPU, memory, peripherals, and interconnects into one chip. 
-- **BabySoC** provides a **simplified, hands-on platform** to learn these concepts without overwhelming complexity.  
-- **Functional modelling** ensures correctness and reliability before RTL and physical design stages.  
-
- 
