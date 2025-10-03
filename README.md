@@ -96,8 +96,3 @@ Tools such as **Icarus Verilog** (for compiling and simulating designs) and **GT
 
 ---
 
-## ✅ Conclusion  
-
-- An **SoC** integrates CPU, memory, peripherals, and interconnects into one chip. 
-- **BabySoC** provides a **simplified, hands-on platform** to learn these concepts without overwhelming complexity.  
-- **Functional modelling** ensures correctness and reliability before RTL and physical design stages.
