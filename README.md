@@ -93,6 +93,38 @@ Functional modelling allows us to:
 Tools such as **Icarus Verilog** (for compiling and simulating designs) and **GTKWave** (for analyzing signal activity) are used here.  
 
 👉 Without functional modelling, moving directly into RTL or physical design would be risky. Errors caught late in the process can result in costly chip re-spins.  
+# ⚡ VSDBabySoC – Simulation Guide  
+
+The **VSDBabySoC** is a simple SoC design that integrates:  
+- **RISC-V core (rvmyth)**  
+- **PLL (avsdpll)**  
+- **DAC (avsddac)**  
+
+This project demonstrates how different IP cores can be integrated into a single SoC and verified using **pre-synthesis and post-synthesis simulations**.
+
+# ⚡ VSDBabySoC  MODELING 
+
+The **VSDBabySoC** is a simple SoC design that integrates:  
+- **RISC-V core (rvmyth)**  
+- **PLL (avsdpll)**  
+- **DAC (avsddac)**  
+
+This project demonstrates how different IP cores can be integrated into a single SoC and verified using **pre-synthesis and post-synthesis simulations**.
 
 ---
 
+## 📂 Project Structure  
+
+
+VSDBabySoC/
+├── src/
+│ ├── include/ # Header files (*.vh) with macros/parameters
+│ │ └── sandpiper.vh
+│ ├── module/ # Verilog design files
+│ │ ├── vsdbabysoc.v # Top-level SoC module
+│ │ ├── rvmyth.v # RISC-V CPU core
+│ │ ├── avsdpll.v # PLL module
+│ │ ├── avsddac.v # DAC module
+│ │ └── testbench.v # Testbench for simulation
+├── output/ # Compiled outputs & simulation files
+└── compiled_tlv/ # Holds intermediate compiled file
