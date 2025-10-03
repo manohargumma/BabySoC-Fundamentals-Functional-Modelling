@@ -100,15 +100,15 @@ Tools such as **Icarus Verilog** (for compiling and simulating designs) and **GT
 ## 📂 Project Structure  
 
 
-VSDBabySoC/
-├── src/
-│ ├── include/ # Header files (*.vh) with macros/parameters
-│ │ └── sandpiper.vh
-│ ├── module/ # Verilog design files
-│ │ ├── vsdbabysoc.v # Top-level SoC module
-│ │ ├── rvmyth.v # RISC-V CPU core
-│ │ ├── avsdpll.v # PLL module
-│ │ ├── avsddac.v # DAC module
-│ │ └── testbench.v # Testbench for simulation
-├── output/ # Compiled outputs & simulation files
-└── compiled_tlv/ # Holds intermediate compiled file
+VSDBabySoC/<br>
+├── src/<br>
+│ ├── include/ # Header files (*.vh) with macros/parametersM<br>
+│ │ └── sandpiper.vh<br>
+│ ├── module/ # Verilog design files<br>
+│ │ ├── vsdbabysoc.v # Top-level SoC module<br>
+│ │ ├── rvmyth.v # RISC-V CPU core<br>
+│ │ ├── avsdpll.v # PLL module<br>
+│ │ ├── avsddac.v # DAC module<br>
+│ │ └── testbench.v # Testbench for simulation<br>
+├── output/ # Compiled outputs & simulation files<br>
+└── compiled_tlv/ # Holds intermediate compiled file<br>
