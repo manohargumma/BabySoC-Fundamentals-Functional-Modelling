@@ -153,49 +153,53 @@ VSDBabySoC/<br>
 ## Step by step modeling walkthrough
 
 1.**First we need to install some important packages:**
-  $sudo apt-get update<br>
-  $sudo apt-get install -y python3 python3-pip git iverilog gtkwave docker.io make build-essential<br>
-  $sudo apt-get remove -y containerd.io<br>
+```bash
+  $sudo apt-get update
+  $sudo apt-get install -y python3 python3-pip git iverilog gtkwave docker.io make build-essential
+  $sudo apt-get remove -y containerd.io
   $ sudo apt-get update<br>
-   $  sudo apt-get install -y docker.io<br>
-  $  sudo systemctl enable docker<br>
-  $  sudo systemctl start docker<br>
-  $  docker --version<br>
-  $  pip install sandpiper-saas<br>
-  $  python3 -m venv ~/.venvs/babysoc<br>
-  $  source ~/.venvs/babysoc/bin/activate<br>
-  $  pip install --upgrade pip<br>
-  $  pip install sandpiper-saas<br>
-  $  sandpiper-saas --version<br>
-  $  sandpiper-saas -h<br><a href="https://ibb.co/20KGvhLN"><img src="https://i.ibb.co/dsK8PM3g/Screenshot-from-2025-10-03-18-49-27.png" alt="Screenshot-from-2025-10-03-18-49-27" border="0"></a><br>
+   $  sudo apt-get install -y docker.io
+  $  sudo systemctl enable docker
+  $  sudo systemctl start docker
+  $  docker --version
+  $  pip install sandpiper-saas
+  $  python3 -m venv ~/.venvs/babysoc
+  $  source ~/.venvs/babysoc/bin/activate
+  $  pip install --upgrade pip
+  $  pip install sandpiper-saas
+  $  sandpiper-saas --version
+  $  sandpiper-saas -h
+```
+<br><a href="https://ibb.co/20KGvhLN"><img src="https://i.ibb.co/dsK8PM3g/Screenshot-from-2025-10-03-18-49-27.png" alt="Screenshot-from-2025-10-03-18-49-27" border="0"></a><br>
 2. **Now we can clone this repository in an arbitrary directory (we'll choose home directory here)**
-
-$ cd VLSI <br>
-$ git clone https://github.com/manili/VSDBabySoC.git<br>
-$cd VSDBabtSoC<br>
-
+```bash
+$ cd VLSI 
+$ git clone https://github.com/manili/VSDBabySoC.git
+$cd VSDBabtSoC
+```
 This repository includes **`rvmyth.tlv`**, a TL-Verilog source file describing the RVMYTH RISC-V core.
 It contains the pipeline stages, instruction decoding, ALU, branch logic, memory interface, and register file connections.<br><br>
 3.  **Convert TL-Verilog to SystemVerilog**
- 
-$sandpiper-saas -i src/module/rvmyth.tlv -o rvmyth.v     --bestsv --noline -p verilog --outdir output/compiled_tlv     --default_includes<br>
+ ```bash
+$sandpiper-saas -i src/module/rvmyth.tlv -o rvmyth.v     --bestsv --noline -p verilog --outdir output/compiled_tlv     --default_includes ```
 <a href="https://ibb.co/qYBgCSRc"><img src="https://i.ibb.co/Mkn1fvRt/Screenshot-from-2025-10-04-19-56-41.png" alt="Screenshot-from-2025-10-04-19-56-41" border="0"></a><br>
 -check location<br>
  output/compiled_tlv/rvmyth.v<br>
  output/compiled_tlv/rvmyth_gen.v<br>
 <a href="https://ibb.co/WNDH0kpn"><img src="https://i.ibb.co/208FSvYq/Screenshot-from-2025-10-04-20-02-14.png" alt="Screenshot-from-2025-10-04-20-02-14" border="0"></a><br>
 4. **Run simulation with Icarus Verilog**<br>
-$ iverilog -g2012 -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM     -I src/include -I output/compiled_tlv -I src/module     -y src/include     src/module/testbench.v     src/module/vsdbabysoc.v     output/compiled_tlv/rvmyth_gen.v     src/module/avsdpll.v src/module/avsddac.v<br>
-
+```bash
+$ iverilog -g2012 -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM     -I src/include -I output/compiled_tlv -I src/module     -y src/include     src/module/testbench.v     src/module/vsdbabysoc.v     output/compiled_tlv/rvmyth_gen.v     src/module/avsdpll.v src/module/avsddac.v
+```
 
 5.**Execute simulation**<br>
 ```bash
-$ make synth<br>
-$ make post_synth_sim<br>
+$ make synt
+$ make post_synth_sim
 ```
 6.**View waveform in GTKWave**<br>
 ```bash
-$gtkwave output/post_synth_sim/post_synth_sim.vcd<br>
+$gtkwave output/post_synth_sim/post_synth_sim.vcd
 ```
 ### Notes
 
