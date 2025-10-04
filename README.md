@@ -376,3 +376,8 @@ OpenSTA is a gate level static timing verifier. As a stand-alone executable it c
 
 ## Static timing analysis on the design
 Due to lack of the proper PLL and DAC liberty files for complete/correct STA, we should consider the output port of the PLL (PLL.CLK) as the clock and analyze the timing of the RVMYTH core. Here is the SDC file content:
+**Now to start the analyzing process we should do the following:**
+``bash
+ $tail -n 50 output/sta/sta.log
+ $ rm -rf output/sta
+ $make sta
