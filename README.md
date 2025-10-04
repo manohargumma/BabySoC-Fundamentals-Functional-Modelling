@@ -303,5 +303,5 @@ $ gtkwave output/post_synth_sim/post_synth_sim.vcd
 
 ---
 ### Result
-<a href="https://ibb.co/j9chrkZp"><img src="https://i.ibb.co/RGx2DT45/Screenshot-from-2025-10-03-19-58-53.png" alt="Screenshot-from-2025-10-03-19-58-53" border="0"></a>
+<a href="https://ibb.co/j9chrkZp"><img src="https://i.ibb.co/RGx2DT45/Screenshot-from-2025-10-03-19-58-53.png" alt="Screenshot-from-2025-10-03-19-58-53" border="0"></a><br>
 
