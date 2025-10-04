@@ -179,7 +179,7 @@ It contains the pipeline stages, instruction decoding, ALU, branch logic, memory
 3.  **Convert TL-Verilog to SystemVerilog**
  
 $sandpiper-saas -i src/module/rvmyth.tlv -o rvmyth.v     --bestsv --noline -p verilog --outdir output/compiled_tlv     --default_includes<br>
-<a href="https://ibb.co/GvW5JcC1"><img src="https://i.ibb.co/5WrR9Bsz/Screenshot-from-2025-10-03-18-54-47.png" alt="Screenshot-from-2025-10-03-18-54-47" border="0"></a>
+<a href="https://ibb.co/GvW5JcC1"><img src="https://i.ibb.co/5WrR9Bsz/Screenshot-from-2025-10-03-18-54-47.png" alt="Screenshot-from-2025-10-03-18-54-47" border="0" /></a>
 
 4. **Run simulation with Icarus Verilog**
 iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
