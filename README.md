@@ -12,7 +12,7 @@ This write-up focuses on four key areas that form the foundation of SoC design a
 
 - [VSDBabySoC Modeling](#vsdbabysoc-modeling)
   - [RVMYTH Modeling](#rvmyth-modeling)
-  - [ 1.PHASE LOCK LOOP(PLL)](#pll-modeling)
+  - [PLL Modeling](#PHASE-LOCK-LOOP(PLL))
   - [DAC Modeling](#dac-modeling)
   - [Step by step modeling walkthrough](#step-by-step-modeling-walkthrough)
 - [OpenLANE installation](#openlane-installation)
