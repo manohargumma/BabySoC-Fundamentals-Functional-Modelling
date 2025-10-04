@@ -372,3 +372,7 @@ Post-synthesis simulation is important because it checks whether the synthesized
  Chip area for module '\vsdbabysoc': 58173.298800
 ```
 # static-timing-analysis-using-opensta
+OpenSTA is a gate level static timing verifier. As a stand-alone executable it can be used to verify the timing of a design using standard file formats.
+
+## Static timing analysis on the design
+Due to lack of the proper PLL and DAC liberty files for complete/correct STA, we should consider the output port of the PLL (PLL.CLK) as the clock and analyze the timing of the RVMYTH core. Here is the SDC file content:
