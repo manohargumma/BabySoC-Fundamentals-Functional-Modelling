@@ -153,7 +153,7 @@ VSDBabySoC/<br>
 ## Step by step modeling walkthrough
 
 1. **First we need to install some important packages:**
-   
+    ```bash
   $sudo apt-get update<br>
   $sudo apt-get install -y python3 python3-pip git iverilog gtkwave docker.io make build-essential<br>
   $sudo apt-get remove -y containerd.io<br>
@@ -170,15 +170,13 @@ VSDBabySoC/<br>
   $  sandpiper-saas --version<br>
   $  sandpiper-saas -h<br>
 2. **Now we can clone this repository in an arbitrary directory (we'll choose home directory here)**
-
+ ```bash
 $ cd VLSI <br>
 $ git clone https://github.com/manili/VSDBabySoC.git<br>
 $cd VSDBabtSoC<br>
 
 This repository includes **`rvmyth.tlv`**, a TL-Verilog source file describing the RVMYTH RISC-V core.
 It contains the pipeline stages, instruction decoding, ALU, branch logic, memory interface, and register file connections.<br>
-
-
 3.  **Convert TL-Verilog to SystemVerilog**
  ```bash
 sandpiper-saas --i rvmyth.tlv --o rvmyth.v --lang systemverilog
