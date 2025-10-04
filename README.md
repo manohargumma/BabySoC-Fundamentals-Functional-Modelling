@@ -172,4 +172,32 @@ VSDBabySoC/<br>
 2. **Now we can clone this repository in an arbitrary directory (we'll choose home directory here)**
 ```bash
  $ cd VLSI
- $
+$ git clone https://github.com/manili/VSDBabySoC.git
+$cd VSDBabtSoC
+
+This repository includes **`rvmyth.tlv`**, a TL-Verilog source file describing the RVMYTH RISC-V core.
+It contains the pipeline stages, instruction decoding, ALU, branch logic, memory interface, and register file connections.
+
+
+3.**Convert TL-Verilog to SystemVerilog**
+ ```bash
+sandpiper-saas --i rvmyth.tlv --o rvmyth.v --lang systemverilog
+
+# Run simulation with Icarus Verilog
+iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
+  -I src/include \
+  src/module/halfadder_tb.v src/module/halfadder.v \
+  src/module/rvmyth.v src/module/avsdpll.v src/module/avsddac.v
+
+# Execute simulation
+./output/pre_synth_sim/pre_synth_sim.out
+
+# View waveform in GTKWave
+gtkwave xorgate.vcd
+```
+
+### Notes
+
+* `BOGUS_USE` warnings can be ignored; they are placeholders for unused logic.
+* Always run **Sandpiper** first to translate `.tlv` into `.v` before compiling.
+
