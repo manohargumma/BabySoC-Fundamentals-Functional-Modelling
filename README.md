@@ -189,11 +189,14 @@ $ iverilog -g2012 -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM     
 
 
 5.**Execute simulation**<br>
+```bash
 $ make synth<br>
 $ make post_synth_sim<br>
+```
 6.**View waveform in GTKWave**<br>
+```bash
 $gtkwave output/post_synth_sim/post_synth_sim.vcd<br>
-
+```
 ### Notes
 
 * `BOGUS_USE` warnings can be ignored; they are placeholders for unused logic.
@@ -210,8 +213,8 @@ More information on OpenLANE:
 
 ### Installation Summary
 
-```bash
 # Clone OpenLANE repository
+```bash
 $ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 $ cd OpenLane/
 
