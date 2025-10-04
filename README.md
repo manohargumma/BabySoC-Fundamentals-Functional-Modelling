@@ -153,7 +153,7 @@ VSDBabySoC/<br>
 ## Step by step modeling walkthrough
 
 1. **First we need to install some important packages:**
-   ```bash
+   
   $sudo apt-get update<br>
   $sudo apt-get install -y python3 python3-pip git iverilog gtkwave docker.io make build-essential<br>
   $sudo apt-get remove -y containerd.io<br>
@@ -170,8 +170,8 @@ VSDBabySoC/<br>
   $  sandpiper-saas --version<br>
   $  sandpiper-saas -h<br>
 2. **Now we can clone this repository in an arbitrary directory (we'll choose home directory here)**
-```bash
-$ cd VLSI<br>
+
+$ cd VLSI <br>
 $ git clone https://github.com/manili/VSDBabySoC.git<br>
 $cd VSDBabtSoC<br>
 
