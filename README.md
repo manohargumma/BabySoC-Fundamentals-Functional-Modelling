@@ -180,9 +180,9 @@ It contains the pipeline stages, instruction decoding, ALU, branch logic, memory
  
 $sandpiper-saas -i src/module/rvmyth.tlv -o rvmyth.v     --bestsv --noline -p verilog --outdir output/compiled_tlv     --default_includes<br>
 <a href="https://ibb.co/qYBgCSRc"><img src="https://i.ibb.co/Mkn1fvRt/Screenshot-from-2025-10-04-19-56-41.png" alt="Screenshot-from-2025-10-04-19-56-41" border="0"></a><br>
-####check location
- output/compiled_tlv/rvmyth.v
- output/compiled_tlv/rvmyth_gen.v
+-check location<br>
+ output/compiled_tlv/rvmyth.v<br>
+ output/compiled_tlv/rvmyth_gen.v<br>
 
 4. **Run simulation with Icarus Verilog**
 iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
