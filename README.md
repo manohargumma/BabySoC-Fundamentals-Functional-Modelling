@@ -154,6 +154,22 @@ VSDBabySoC/<br>
 
 1. **First we need to install some important packages:**
    ```bash
-   git clone https://github.com/manili/VSDBabySoC.git
-   cd VSDBabySoC
-
+  $sudo apt-get update<br>
+  $sudo apt-get install -y python3 python3-pip git iverilog gtkwave docker.io make build-essential<br>
+  $sudo apt-get remove -y containerd.io<br>
+  $ sudo apt-get update<br>
+   $  sudo apt-get install -y docker.io<br>
+  $  sudo systemctl enable docker<br>
+  $  sudo systemctl start docker<br>
+  $  docker --version<br>
+  $  pip install sandpiper-saas<br>
+  $  python3 -m venv ~/.venvs/babysoc<br>
+  $  source ~/.venvs/babysoc/bin/activate<br>
+  $  pip install --upgrade pip<br>
+  $  pip install sandpiper-saas<br>
+  $  sandpiper-saas --version<br>
+  $  sandpiper-saas -h<br>
+2. **Now we can clone this repository in an arbitrary directory (we'll choose home directory here)**
+```bash
+ $ cd VLSI
+ $
