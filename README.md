@@ -381,3 +381,4 @@ Due to lack of the proper PLL and DAC liberty files for complete/correct STA, we
  $tail -n 50 output/sta/sta.log
  $ rm -rf output/sta
  $make sta
+```
