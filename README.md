@@ -304,4 +304,11 @@ $ gtkwave output/post_synth_sim/post_synth_sim.vcd
 ---
 ### Result
 <a href="https://ibb.co/j9chrkZp"><img src="https://i.ibb.co/RGx2DT45/Screenshot-from-2025-10-03-19-58-53.png" alt="Screenshot-from-2025-10-03-19-58-53" border="0"></a><br>
+**Post-Synthesis Simulation**<br>
+
+After completing the synthesis of my Verilog design, I performed post-synthesis simulation to verify the functional correctness at the gate-level. The simulation was done using Icarus Verilog and the results were viewed in GTKWave.<br>
+
+In the waveform, signals such as reset, REF, VCO_IN, VREFH, VREFL, EN_CP, EN_VCO, and OUT were monitored. The behavior of the design shows that after the reset is de-asserted, the reference and control signals properly drive the output.<br>
+
+Post-synthesis simulation is important because it checks whether the synthesized netlist (generated after logic synthesis) still preserves the intended functionality of the RTL code. It also helps to identify any mismatches introduced during synthesis.<br>
 
