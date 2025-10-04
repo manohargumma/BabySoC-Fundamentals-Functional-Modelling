@@ -112,15 +112,13 @@ VSDBabySoC/<br>
 │ │ └── testbench.v # Testbench for simulation<br>
 ├── output/ # Compiled outputs & simulation files<br>
 └── compiled_tlv/ # Holds intermediate compiled file<br>
-## rvmyth-modeling
-As we mentioned in What is RVMYTH section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the sandpiper-saas could help us do the job.
+
+
 
 <details>
-  <summary>Understanding System on a Chip (SoC)</summary>
+  <summary>## rvmyth-modeling</summary>
 
-  A **System on a Chip (SoC)** is an integrated circuit that combines all components 
-  of a computer or other electronic system into a single chip. It typically includes
-  a CPU, memory, input/output ports, and secondary storage.
+ As we mentioned in What is RVMYTH section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the sandpiper-saas could help us do the job.
 
 </details>
 
