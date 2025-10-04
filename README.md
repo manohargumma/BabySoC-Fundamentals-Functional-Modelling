@@ -198,7 +198,7 @@ $gtkwave output/post_synth_sim/post_synth_sim.vcd<br>
 
 * `BOGUS_USE` warnings can be ignored; they are placeholders for unused logic.
 * Always run **Sandpiper** first to translate `.tlv` into `.v` before compiling.
-## OpenLANE and SKY130 Setup
+## openlane-installation
 
 The OpenLANE and SKY130 installation can be done by following the steps in this repository:
 👉 [openlane_build_script](https://github.com/nickson-jose/openlane_build_script)
