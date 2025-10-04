@@ -11,10 +11,10 @@ This write-up focuses on four key areas that form the foundation of SoC design a
 - [Role of Functional Modelling Before RTL and Physical Design](#4-role-of-functional-modelling-before-rtl-and-physical-design)
 
 - [VSDBabySoC Modeling](#vsdbabysoc-modeling)
-  - [RVMYTH Modeling](#rvmyth-modeling)
-  - [PLL Modeling](#1-PHASE-LOCK-LOOP-(PLL) )
-  - [DAC Modeling](#dac-modeling)
-  - [Step by step modeling walkthrough](#step-by-step-modeling-walkthrough)
+   [RVMYTH Modeling](#rvmyth-modeling)  
+- [PLL Modeling](#pll-modeling)  
+- [DAC Modeling](#dac-modeling)  
+- [Step by step modeling walkthrough](#step-by-step-modeling-walkthrough)  
 - [OpenLANE installation](#openlane-installation)
 - [Post-synthesis simulation](#post-synthesis-simulation)
   - [How to synthesize the design](#how-to-synthesize-the-design)
@@ -115,44 +115,45 @@ VSDBabySoC/<br>
 
 
 
+---
 
-  ## rvmyth-modeling
+## RVMYTH Modeling
 
- As we mentioned in What is RVMYTH section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the sandpiper-saas could help us do the job.
-## 🔄 PLL and DAC Modelling in BabySoC  
+**Goal:** provide a compact RISC-V–like CPU (rvmyth) that is simple to read and easy to simulate.
 
-### 1.PHASE LOCK LOOP(PLL)  
-
-A **Phase-Locked Loop (PLL)** is a control system that generates a stable, high-frequency clock by locking onto a reference input clock.  
-
-📌 **In SoC Design:**  
-- Ensures all modules operate synchronously.  
-- Generates multiple clock domains (high-speed CPU, low-speed peripherals).  
-- Stabilizes jitter and phase variations.  
-
-📌 **In BabySoC:**  
-- The **avsdpll.v** module models a simplified PLL.  
-- It receives a reference clock (`ref_clk`) and generates an output clock (`pll_clk`).  
-- Used to drive the RISC-V core and synchronize SoC components.  
-
-✅ **Simulation Goal:** Verify that the PLL locks correctly and provides a stable clock after reset.  
-Waveform should show a **delayed but steady clock** output compared to the reference clock.  
+**Key features**
+- Minimal instruction subset (e.g., add, load, store, branch)
+- Simple register file (x0..x31 behavior)
+- Program memory interface (ROM or testbench-provided instruction stream)
+- Cleanly separated datapath and control logic
+- Parameterized width and reset behavior (via `include/*.vh`)
 
 ---
 
-### 2. Digital-to-Analog Converter (DAC)  
+## PLL Modeling
 
-A **Digital-to-Analog Converter (DAC)** transforms digital signals (binary) into analog voltages or currents.  
+**Goal:** model clock generation behavior for simulation without requiring transistor-level PLL or an analog simulator.
 
-📌 **In SoC Design:**  
-- Interfaces with the **analog world** (audio, video, sensors).  
-- Essential for multimedia, signal processing, and IoT applications.  
+**Modeling approach**
+- Behavioral Verilog that generates an output clock (`clk_out`) derived from an input (`clk_in`) with configurable multiplication/division factors.
+- Includes simple lock detection logic (`locked` signal) and a programmable lock-up delay to mimic real-world PLL lock time.
 
-📌 **In BabySoC:**  
-- The **avsddac.v** module implements a 10-bit DAC.  
-- Input: 10-bit digital word (`din`).  
-- Output: Analog-equivalent value (`vout`).  
-- Demonstrates how digital computations from RISC-V core can be translated into analog signals.  
+---
 
-✅ **Simulation Goal:** Check that increasing digital input values (`0000000000 → 1111111111`) produce proportional analog output values.  
-Waveform should show **stair-step increments** in DAC output.  
+## DAC Modeling
+
+**Goal:** provide a simple digital-to-analog converter behavioral model usable in purely digital testbenches.
+
+**Modeling approach**
+- Verilog module that accepts a parallel digital input (e.g., 8/10/12-bit) and outputs a digital-encoded "analog" stream.
+- Optional PWM-mode testbench to produce waveforms suitable for GTKWave visualization.
+
+---
+
+## Step by step modeling walkthrough
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/manili/VSDBabySoC.git
+   cd VSDBabySoC
+
