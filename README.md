@@ -12,7 +12,7 @@ This write-up focuses on four key areas that form the foundation of SoC design a
 
 - [VSDBabySoC Modeling](#vsdbabysoc-modeling)
   - [RVMYTH Modeling](#rvmyth-modeling)
-  - [PLL Modeling](#pll-modeling)
+  - [ 1.PHASE LOCK LOOP(PLL)](#pll-modeling)
   - [DAC Modeling](#dac-modeling)
   - [Step by step modeling walkthrough](#step-by-step-modeling-walkthrough)
 - [OpenLANE installation](#openlane-installation)
@@ -121,7 +121,7 @@ VSDBabySoC/<br>
  As we mentioned in What is RVMYTH section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the sandpiper-saas could help us do the job.
 ## 🔄 PLL and DAC Modelling in BabySoC  
 
-### 1.pll-modeling(PLL)  
+### 1.PHASE LOCK LOOP(PLL)  
 
 A **Phase-Locked Loop (PLL)** is a control system that generates a stable, high-frequency clock by locking onto a reference input clock.  
 
