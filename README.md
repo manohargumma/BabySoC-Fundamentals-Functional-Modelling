@@ -17,12 +17,9 @@ This write-up focuses on four key areas that form the foundation of SoC design a
 - [Step by step modeling walkthrough](#step-by-step-modeling-walkthrough)  
 - [OpenLANE installation](#openlane-installation)
 - [Post-synthesis simulation](#post-synthesis-simulation)
-  - [How to synthesize the design](#how-to-synthesize-the-design)
-  - [Synthesis using Yosys](#synthesis-using-yosys)
-  - [Post synthesis simulation (GLS)](#post-synthesis-simulation-gls)
-  - [Yosys final report](#yosys-final-report)
+  
 - [Static timing analysis using OpenSTA](#static-timing-analysis-using-opensta)
-  - [Static timing analysis on the design](#static-timing-analysis-on-the-design)
+ 
 
 ## 1. What is a System-on-Chip (SoC)?  
 
@@ -374,3 +371,4 @@ Post-synthesis simulation is important because it checks whether the synthesized
 
  Chip area for module '\vsdbabysoc': 58173.298800
 ```
+# static-timing-analysis-using-opensta
