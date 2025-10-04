@@ -115,27 +115,8 @@ VSDBabySoC/<br>
 
 
 
-<details>
-  <summary>## rvmyth-modeling</summary>
+
+  ## rvmyth-modeling
 
  As we mentioned in What is RVMYTH section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the sandpiper-saas could help us do the job.
 
-</details>
-
-<details>
-  <summary>Types of SoCs</summary>
-
-  - Application-Specific SoCs  
-  - General Purpose SoCs  
-  - Communication SoCs  
-  - Multimedia SoCs  
-
-</details>
-
-<details>
-  <summary>Introduction to VSDBabySoC</summary>
-
-  The **VSDBabySoC** project integrates a RISC-V core with PLL and DAC, 
-  providing an open-source educational platform for SoC design.
-
-</details>
