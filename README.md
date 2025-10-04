@@ -185,17 +185,14 @@ $sandpiper-saas -i src/module/rvmyth.tlv -o rvmyth.v     --bestsv --noline -p ve
  output/compiled_tlv/rvmyth_gen.v<br>
 <a href="https://ibb.co/WNDH0kpn"><img src="https://i.ibb.co/208FSvYq/Screenshot-from-2025-10-04-20-02-14.png" alt="Screenshot-from-2025-10-04-20-02-14" border="0"></a><br>
 4. **Run simulation with Icarus Verilog**
-iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
-  -I src/include \
-  src/module/halfadder_tb.v src/module/halfadder.v 
-  src/module/rvmyth.v src/module/avsdpll.v src/module/avsddac.v<br<br>
+$ iverilog -g2012 -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM     -I src/include -I output/compiled_tlv -I src/module     -y src/include     src/module/testbench.v     src/module/vsdbabysoc.v     output/compiled_tlv/rvmyth_gen.v     src/module/avsdpll.v src/module/avsddac.v<br>
+
 
 5.**Execute simulation**
-./output/pre_synth_sim/pre_synth_sim.out<b<br>r>
-
+$ make synth<br>
+$ make post_synth_sim<br>
 6.**View waveform in GTKWave**
-gtkwave xorgate.vcd<br><br>
-```
+$gtkwave output/post_synth_sim/post_synth_sim.vcd<br>
 
 ### Notes
 
