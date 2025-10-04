@@ -218,8 +218,9 @@ More information on OpenLANE:
 
 ### Installation Summary
 
-# Clone OpenLANE repository
+Clone OpenLANE repository
 ```bash
+#Clone OpenLANE repository
 $ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 $ cd OpenLane/
 
@@ -240,7 +241,7 @@ $ make test
 
 ---
 
-## Post-Synthesis Simulation
+## post-synthesis-simulation
 
 The first step in the ASIC design flow is **synthesis** of the RTL code, followed by a simulation of the synthesized netlist (Gate-Level Simulation).
 This ensures the synthesized design matches the RTL functionality.
