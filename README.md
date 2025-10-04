@@ -382,3 +382,5 @@ Due to lack of the proper PLL and DAC liberty files for complete/correct STA, we
  $ rm -rf output/sta
  $make sta
 ```
+**And now here is the output of the OpenSTA tool:**
+<a href="https://ibb.co/qYTxxDy5"><img src="https://i.ibb.co/xqx332CH/Screenshot-from-2025-10-03-20-56-07.png" alt="Screenshot-from-2025-10-03-20-56-07" border="0"></a><br />
