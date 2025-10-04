@@ -152,7 +152,7 @@ VSDBabySoC/<br>
 
 ## Step by step modeling walkthrough
 
-1. **Clone the repo**
+1. **First we need to install some important packages:**
    ```bash
    git clone https://github.com/manili/VSDBabySoC.git
    cd VSDBabySoC
